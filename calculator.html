@@ -1,22 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Simple Calculator</title>
-    <link rel="stylesheet" href="calculator.css">
-</head>
-<body>
-    <div id="calculator-container">
-        <input type="number" id="number1" placeholder="Number 1">
-        <input type="number" id="number2" placeholder="Number 2">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A responsive calculator companion page for the interactive quiz app."
+    />
+    <title>Interactive Quiz App | Responsive Calculator</title>
+    <link rel="stylesheet" href="calculator.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero hero-compact">
+        <div class="hero-copy">
+          <p class="eyebrow">Companion tool</p>
+          <h1>Quick calculator for practice and checking work.</h1>
+          <p class="hero-text">
+            Use the same polished responsive system to calculate results comfortably on smaller or
+            larger screens, then jump back into the quiz flow.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#calculator-card">Use calculator</a>
+            <a class="secondary-link" href="index.html">Back to quiz</a>
+          </div>
+        </div>
+      </header>
 
-        <button id="add">+</button>
-        <button id="subtract">-</button>
-        <button id="multiply">*</button>
-        <button id="divide">/</button>
+      <main class="content-grid single-column">
+        <section id="calculator-card" class="panel calculator-panel" aria-labelledby="calculator-title">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Calculator</p>
+              <h2 id="calculator-title">Simple arithmetic, cleaner layout</h2>
+            </div>
+            <span class="chip">Add, subtract, multiply, divide</span>
+          </div>
 
-        <div id="result">Result: <span id="calculation-result">0</span></div>
+          <div class="calculator-form">
+            <label class="field">
+              <span>First number</span>
+              <input type="number" id="number1" placeholder="Enter the first number" />
+            </label>
+
+            <label class="field">
+              <span>Second number</span>
+              <input type="number" id="number2" placeholder="Enter the second number" />
+            </label>
+          </div>
+
+          <div class="calculator-actions" aria-label="Calculator operations">
+            <button id="add" class="primary-button" type="button">Add</button>
+            <button id="subtract" class="secondary-button" type="button">Subtract</button>
+            <button id="multiply" class="secondary-button" type="button">Multiply</button>
+            <button id="divide" class="secondary-button" type="button">Divide</button>
+          </div>
+
+          <div id="result" class="result-card" aria-live="polite">
+            <span class="result-label">Result</span>
+            <span id="calculation-result" class="result-value">0</span>
+          </div>
+        </section>
+      </main>
     </div>
+
     <script src="calculator.js"></script>
-</body>
+  </body>
 </html>

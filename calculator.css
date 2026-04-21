@@ -1,31 +1,76 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+@import url("./styles.css");
+
+.hero-compact {
+  grid-template-columns: 1fr;
 }
 
-#calculator-container {
-    text-align: center;
+.single-column {
+  grid-template-columns: 1fr;
 }
 
-input[type="number"] {
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    font-size: 16px;
+.calculator-form {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
 }
 
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.field {
+  display: grid;
+  gap: 0.45rem;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 20px;
+.field span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.field input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.field input:focus-visible {
+  outline: 3px solid rgba(40, 100, 240, 0.22);
+  outline-offset: 3px;
+}
+
+.calculator-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.25rem;
+}
+
+.result-card {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
+  padding: 1rem;
+}
+
+.result-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.result-value {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .calculator-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .calculator-actions {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }

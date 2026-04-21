@@ -1,24 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Simple Quiz</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="quiz-container">
-        <p id="quiz-question">What is 2 + 2?</p>
-        <div>
-            <input type="radio" id="choice1" name="quiz" value="4">
-            <label for="choice1">4</label><br>
-            <input type="radio" id="choice2" name="quiz" value="22">
-            <label for="choice2">22</label><br>
-            <input type="radio" id="choice3" name="quiz" value="3">
-            <label for="choice3">3</label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A responsive interactive quiz app with a companion calculator, built with HTML, CSS, and JavaScript."
+    />
+    <title>Interactive Quiz App | Responsive Practice Experience</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Responsive JavaScript mini app</p>
+          <h1>Practice fast. Learn clearly. Stay focused.</h1>
+          <p class="hero-text">
+            This interactive quiz app was refactored into a mobile-first experience with stronger
+            layout structure, cleaner spacing, better typography, and a more polished visual style
+            across mobile, tablet, and desktop.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#quiz-card">Start quiz</a>
+            <a class="secondary-link" href="calculator.html">Open calculator</a>
+          </div>
         </div>
-        <button id="submit-answer">Submit Answer</button>
-        <p id="feedback"></p>
+
+        <div class="hero-stats" aria-label="App highlights">
+          <div class="stat-card">
+            <span class="stat-value">1</span>
+            <span class="stat-label">Interactive question flow</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">2</span>
+            <span class="stat-label">Responsive practice tools</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Mobile-first layout approach</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-grid">
+        <section id="quiz-card" class="panel quiz-panel" aria-labelledby="quiz-title">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Quiz challenge</p>
+              <h2 id="quiz-title">Quick knowledge check</h2>
+            </div>
+            <span class="chip">Single question demo</span>
+          </div>
+
+          <p id="quiz-question" class="quiz-question">What is 2 + 2?</p>
+
+          <form id="quiz-form" class="answer-list">
+            <label class="answer-option" for="choice1">
+              <input type="radio" id="choice1" name="quiz" value="4" />
+              <span>
+                <strong>4</strong>
+                <small>The correct sum of 2 + 2.</small>
+              </span>
+            </label>
+
+            <label class="answer-option" for="choice2">
+              <input type="radio" id="choice2" name="quiz" value="22" />
+              <span>
+                <strong>22</strong>
+                <small>A common joke answer, but not the correct one.</small>
+              </span>
+            </label>
+
+            <label class="answer-option" for="choice3">
+              <input type="radio" id="choice3" name="quiz" value="3" />
+              <span>
+                <strong>3</strong>
+                <small>Close, but one short of the correct answer.</small>
+              </span>
+            </label>
+          </form>
+
+          <div class="panel-actions">
+            <button id="submit-answer" class="primary-button" type="button">Submit answer</button>
+            <a class="text-link" href="calculator.html">Need help? Try the calculator</a>
+          </div>
+
+          <p id="feedback" class="feedback-message" aria-live="polite"></p>
+        </section>
+
+        <aside class="panel overview-panel" aria-labelledby="overview-title">
+          <p class="eyebrow">Why this refactor matters</p>
+          <h2 id="overview-title">Small project, much stronger presentation.</h2>
+          <p class="overview-copy">
+            The original app was functional, but it relied on basic spacing and a narrow fixed card.
+            This updated version uses fluid layout behavior, modern card styling, more readable type,
+            and cleaner calls to action so the project feels more pin-worthy on GitHub.
+          </p>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Mobile-first</h3>
+              <p>Single-column structure by default, then enhanced for wider screens.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Accessible</h3>
+              <p>Clear labels, better focus states, stronger contrast, and live feedback messaging.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Consistent</h3>
+              <p>The quiz and calculator now share the same visual language and spacing system.</p>
+            </article>
+          </div>
+        </aside>
+      </main>
     </div>
+
     <script src="quiz.js"></script>
-</body>
+  </body>
 </html>
